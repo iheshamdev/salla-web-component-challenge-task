@@ -29,6 +29,12 @@ const config: Config = {
       fontFamily: {
         sans: ['Ping LCG', 'sans-serif'],
       },
+      fontWeight: {
+        light: '400',
+        normal: '500',
+        bold: '700',
+        black: '900',
+      },
     },
   },
   plugins: [],

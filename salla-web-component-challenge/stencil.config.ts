@@ -33,6 +33,7 @@ export const config: Config = {
     browserHeadless: 'new',
   },
   plugins: [tailwind(), tailwindHMR()],
+  globalStyle: './src/global/app.css',
   devServer: {
     reloadStrategy: 'pageReload',
   },
