@@ -8,3 +8,14 @@ type CartItem = {
     amount: number;
   };
 };
+
+type ShippingCompany = {
+  id: string;
+  name: string;
+  label: string;
+  logo: string;
+  fees: {
+    currency: 'SAR';
+    amount: number;
+  };
+};

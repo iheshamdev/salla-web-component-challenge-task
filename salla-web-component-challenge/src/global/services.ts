@@ -44,3 +44,48 @@ export async function fetchCartItems() {
     return STATIC_CART_ITEMS;
   }
 }
+
+const STATIC_SHIPPING_COMPANIES: ShippingCompany[] = [
+  {
+    id: '002',
+    name: 'dhl',
+    label: 'DHL',
+    logo: 'https://www.dhl.com/content/dam/dhl/global/core/images/logos/dhl-logo.svg',
+    fees: {
+      currency: 'SAR',
+      amount: 0,
+    },
+  },
+  {
+    id: '003',
+    name: 'fedex',
+    label: 'FedEx',
+    logo: 'https://www.fedex.com/content/dam/fedex-com/logos/logo.png',
+    fees: {
+      currency: 'SAR',
+      amount: 15,
+    },
+  },
+  {
+    id: '001',
+    name: 'aramex',
+    label: 'Aramex',
+    logo: 'https://www.aramex.com/Sitefinity/WebsiteTemplates/aramex/App_Themes/aramex/Images/Aramex%20logo%20English.webp',
+    fees: {
+      currency: 'SAR',
+      amount: 25,
+    },
+  },
+];
+
+export async function fetchShippingCompanies() {
+  try {
+    //   const cartItems = await fetchCartItems();
+    const res = (await GET({ endpoint: 'shipping' })) as any;
+    state.shippingCompanies = res.data || [];
+    return res.data;
+  } catch (error) {
+    state.shippingCompanies = STATIC_SHIPPING_COMPANIES;
+    return STATIC_SHIPPING_COMPANIES;
+  }
+}
