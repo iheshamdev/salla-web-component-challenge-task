@@ -12,7 +12,7 @@
   "unpkg": "dist/salla-web-component-challenge/salla-web-component-challenge.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/SallaChallenges/WebComponent-Challenge-iheshamdev-7479"
   },
   "files": [
     "dist/",
@@ -26,7 +26,7 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^4.7.0"
+    "@stencil/core": "^4.12.6"
   },
   "devDependencies": {
     "@stencil/store": "^2.0.14",

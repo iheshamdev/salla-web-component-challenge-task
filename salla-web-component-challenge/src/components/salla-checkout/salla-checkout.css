@@ -1,0 +1,6 @@
+:host {
+  display: block;
+}
+.checkout-container {
+  @apply bg-white rounded-[12px] w-[550px] p-5 mx-auto flex flex-col gap-y-4 h-[550px] max-h-dvh;
+}
