@@ -89,3 +89,27 @@ export async function fetchShippingCompanies() {
     return STATIC_SHIPPING_COMPANIES;
   }
 }
+
+const STATIC_COUPONS: Coupon[] = [
+  {
+    id: '001',
+    name: 'freemusic',
+    label: 'FREEMUSIC',
+    discount: {
+      type: 'percentage',
+      amount: '15',
+    },
+  },
+];
+
+export async function fetchCoupons() {
+  try {
+    //   const cartItems = await fetchCartItems();
+    const res = (await GET({ endpoint: 'coupon' })) as any;
+    state.coupons = res.data || [];
+    return res.data;
+  } catch (error) {
+    state.coupons = STATIC_COUPONS;
+    return STATIC_COUPONS;
+  }
+}

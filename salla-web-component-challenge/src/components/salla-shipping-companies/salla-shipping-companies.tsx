@@ -21,7 +21,7 @@ export class SallaShippingMethods {
 
   render() {
     return (
-      <div class="border-b border-lightGray h-full">
+      <div class="border-b border-gray h-full">
         {state.shippingCompanies.map(method => (
           <salla-radio-btn
             key={method.id}
@@ -33,11 +33,11 @@ export class SallaShippingMethods {
           >
             <div class="flex-1 flex justify-between items-center gap-x-3 cursor-pointer">
               <img src={method.logo} alt="" class="w-10" />
-              <h4 class="flex-1 text-black-text">{method.label}</h4>
+              <h4 class="flex-1 text-black[333]">{method.label}</h4>
               {method.fees.amount === 0 ? (
-                <span class="font-bold text-black-text">Free</span>
+                <span class="font-bold text-black[333]">Free</span>
               ) : (
-                <span class="font-bold text-black-text">{`${method.fees.currency} + ${method.fees.amount}`}</span>
+                <span class="font-bold text-black[333]">{`${method.fees.currency} + ${method.fees.amount}`}</span>
               )}
             </div>
           </salla-radio-btn>

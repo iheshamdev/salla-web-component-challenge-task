@@ -12,10 +12,25 @@ export namespace Components {
     }
     interface SallaCheckout {
     }
+    interface SallaCheckoutCoupon {
+    }
     interface SallaCheckoutHeader {
+    }
+    interface SallaCheckoutTotals {
+    }
+    interface SallaRadioBtn {
+        "checked": boolean;
+        "label"?: string;
+        "name": string;
+        "radioId": string;
+        "value": string;
     }
     interface SallaShippingCompanies {
     }
+}
+export interface SallaRadioBtnCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSallaRadioBtnElement;
 }
 declare global {
     interface HTMLSallaBreadcrumbElement extends Components.SallaBreadcrumb, HTMLStencilElement {
@@ -36,11 +51,40 @@ declare global {
         prototype: HTMLSallaCheckoutElement;
         new (): HTMLSallaCheckoutElement;
     };
+    interface HTMLSallaCheckoutCouponElement extends Components.SallaCheckoutCoupon, HTMLStencilElement {
+    }
+    var HTMLSallaCheckoutCouponElement: {
+        prototype: HTMLSallaCheckoutCouponElement;
+        new (): HTMLSallaCheckoutCouponElement;
+    };
     interface HTMLSallaCheckoutHeaderElement extends Components.SallaCheckoutHeader, HTMLStencilElement {
     }
     var HTMLSallaCheckoutHeaderElement: {
         prototype: HTMLSallaCheckoutHeaderElement;
         new (): HTMLSallaCheckoutHeaderElement;
+    };
+    interface HTMLSallaCheckoutTotalsElement extends Components.SallaCheckoutTotals, HTMLStencilElement {
+    }
+    var HTMLSallaCheckoutTotalsElement: {
+        prototype: HTMLSallaCheckoutTotalsElement;
+        new (): HTMLSallaCheckoutTotalsElement;
+    };
+    interface HTMLSallaRadioBtnElementEventMap {
+        "radioChange": string;
+    }
+    interface HTMLSallaRadioBtnElement extends Components.SallaRadioBtn, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLSallaRadioBtnElementEventMap>(type: K, listener: (this: HTMLSallaRadioBtnElement, ev: SallaRadioBtnCustomEvent<HTMLSallaRadioBtnElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLSallaRadioBtnElementEventMap>(type: K, listener: (this: HTMLSallaRadioBtnElement, ev: SallaRadioBtnCustomEvent<HTMLSallaRadioBtnElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLSallaRadioBtnElement: {
+        prototype: HTMLSallaRadioBtnElement;
+        new (): HTMLSallaRadioBtnElement;
     };
     interface HTMLSallaShippingCompaniesElement extends Components.SallaShippingCompanies, HTMLStencilElement {
     }
@@ -52,7 +96,10 @@ declare global {
         "salla-breadcrumb": HTMLSallaBreadcrumbElement;
         "salla-cart-items": HTMLSallaCartItemsElement;
         "salla-checkout": HTMLSallaCheckoutElement;
+        "salla-checkout-coupon": HTMLSallaCheckoutCouponElement;
         "salla-checkout-header": HTMLSallaCheckoutHeaderElement;
+        "salla-checkout-totals": HTMLSallaCheckoutTotalsElement;
+        "salla-radio-btn": HTMLSallaRadioBtnElement;
         "salla-shipping-companies": HTMLSallaShippingCompaniesElement;
     }
 }
@@ -63,7 +110,19 @@ declare namespace LocalJSX {
     }
     interface SallaCheckout {
     }
+    interface SallaCheckoutCoupon {
+    }
     interface SallaCheckoutHeader {
+    }
+    interface SallaCheckoutTotals {
+    }
+    interface SallaRadioBtn {
+        "checked"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "onRadioChange"?: (event: SallaRadioBtnCustomEvent<string>) => void;
+        "radioId"?: string;
+        "value"?: string;
     }
     interface SallaShippingCompanies {
     }
@@ -71,7 +130,10 @@ declare namespace LocalJSX {
         "salla-breadcrumb": SallaBreadcrumb;
         "salla-cart-items": SallaCartItems;
         "salla-checkout": SallaCheckout;
+        "salla-checkout-coupon": SallaCheckoutCoupon;
         "salla-checkout-header": SallaCheckoutHeader;
+        "salla-checkout-totals": SallaCheckoutTotals;
+        "salla-radio-btn": SallaRadioBtn;
         "salla-shipping-companies": SallaShippingCompanies;
     }
 }
@@ -82,7 +144,10 @@ declare module "@stencil/core" {
             "salla-breadcrumb": LocalJSX.SallaBreadcrumb & JSXBase.HTMLAttributes<HTMLSallaBreadcrumbElement>;
             "salla-cart-items": LocalJSX.SallaCartItems & JSXBase.HTMLAttributes<HTMLSallaCartItemsElement>;
             "salla-checkout": LocalJSX.SallaCheckout & JSXBase.HTMLAttributes<HTMLSallaCheckoutElement>;
+            "salla-checkout-coupon": LocalJSX.SallaCheckoutCoupon & JSXBase.HTMLAttributes<HTMLSallaCheckoutCouponElement>;
             "salla-checkout-header": LocalJSX.SallaCheckoutHeader & JSXBase.HTMLAttributes<HTMLSallaCheckoutHeaderElement>;
+            "salla-checkout-totals": LocalJSX.SallaCheckoutTotals & JSXBase.HTMLAttributes<HTMLSallaCheckoutTotalsElement>;
+            "salla-radio-btn": LocalJSX.SallaRadioBtn & JSXBase.HTMLAttributes<HTMLSallaRadioBtnElement>;
             "salla-shipping-companies": LocalJSX.SallaShippingCompanies & JSXBase.HTMLAttributes<HTMLSallaShippingCompaniesElement>;
         }
     }

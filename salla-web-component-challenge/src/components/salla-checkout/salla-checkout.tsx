@@ -16,6 +16,21 @@ export class MyComponent {
         <salla-checkout-header />
         {/* cart items || shipping companies */}
         <div class="current-step">{this.getCurrentStep()}</div>
+        {state.currentStepIndex === 0 && <salla-checkout-coupon />}
+        <salla-checkout-totals />
+        <button
+          class="bg-primary text-white text-md rounded-md px-4 py-3"
+          onClick={() => {
+            if (state.currentStepIndex >= state.checkoutSteps.length - 1) {
+              // this.checkoutSubmitted = true;
+              console.log('Thank you');
+              return;
+            }
+            state.currentStepIndex++;
+          }}
+        >
+          Proceed to shipping
+        </button>
       </div>
     );
   }

@@ -19,3 +19,14 @@ type ShippingCompany = {
     amount: number;
   };
 };
+
+type Coupon = {
+  id: string;
+  name: string;
+  label: string;
+  discount: {
+    type: 'percentage';
+    amount: string;
+  };
+  discountAmount?: number;
+};
