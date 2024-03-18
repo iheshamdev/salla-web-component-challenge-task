@@ -6,56 +6,58 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface SallaBreadcrumb {
+    }
+    interface SallaCheckout {
+    }
+    interface SallaCheckoutHeader {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLSallaBreadcrumbElement extends Components.SallaBreadcrumb, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLSallaBreadcrumbElement: {
+        prototype: HTMLSallaBreadcrumbElement;
+        new (): HTMLSallaBreadcrumbElement;
+    };
+    interface HTMLSallaCheckoutElement extends Components.SallaCheckout, HTMLStencilElement {
+    }
+    var HTMLSallaCheckoutElement: {
+        prototype: HTMLSallaCheckoutElement;
+        new (): HTMLSallaCheckoutElement;
+    };
+    interface HTMLSallaCheckoutHeaderElement extends Components.SallaCheckoutHeader, HTMLStencilElement {
+    }
+    var HTMLSallaCheckoutHeaderElement: {
+        prototype: HTMLSallaCheckoutHeaderElement;
+        new (): HTMLSallaCheckoutHeaderElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "salla-breadcrumb": HTMLSallaBreadcrumbElement;
+        "salla-checkout": HTMLSallaCheckoutElement;
+        "salla-checkout-header": HTMLSallaCheckoutHeaderElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface SallaBreadcrumb {
+    }
+    interface SallaCheckout {
+    }
+    interface SallaCheckoutHeader {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "salla-breadcrumb": SallaBreadcrumb;
+        "salla-checkout": SallaCheckout;
+        "salla-checkout-header": SallaCheckoutHeader;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "salla-breadcrumb": LocalJSX.SallaBreadcrumb & JSXBase.HTMLAttributes<HTMLSallaBreadcrumbElement>;
+            "salla-checkout": LocalJSX.SallaCheckout & JSXBase.HTMLAttributes<HTMLSallaCheckoutElement>;
+            "salla-checkout-header": LocalJSX.SallaCheckoutHeader & JSXBase.HTMLAttributes<HTMLSallaCheckoutHeaderElement>;
         }
     }
 }
