@@ -14,6 +14,8 @@ export class MyComponent {
     return (
       <div class="checkout-container">
         <salla-checkout-header />
+        {/* cart items || shipping companies */}
+        <div class="current-step">{this.getCurrentStep()}</div>
       </div>
     );
   }

@@ -8,9 +8,13 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SallaBreadcrumb {
     }
+    interface SallaCartItems {
+    }
     interface SallaCheckout {
     }
     interface SallaCheckoutHeader {
+    }
+    interface SallaShippingCompanies {
     }
 }
 declare global {
@@ -19,6 +23,12 @@ declare global {
     var HTMLSallaBreadcrumbElement: {
         prototype: HTMLSallaBreadcrumbElement;
         new (): HTMLSallaBreadcrumbElement;
+    };
+    interface HTMLSallaCartItemsElement extends Components.SallaCartItems, HTMLStencilElement {
+    }
+    var HTMLSallaCartItemsElement: {
+        prototype: HTMLSallaCartItemsElement;
+        new (): HTMLSallaCartItemsElement;
     };
     interface HTMLSallaCheckoutElement extends Components.SallaCheckout, HTMLStencilElement {
     }
@@ -32,23 +42,37 @@ declare global {
         prototype: HTMLSallaCheckoutHeaderElement;
         new (): HTMLSallaCheckoutHeaderElement;
     };
+    interface HTMLSallaShippingCompaniesElement extends Components.SallaShippingCompanies, HTMLStencilElement {
+    }
+    var HTMLSallaShippingCompaniesElement: {
+        prototype: HTMLSallaShippingCompaniesElement;
+        new (): HTMLSallaShippingCompaniesElement;
+    };
     interface HTMLElementTagNameMap {
         "salla-breadcrumb": HTMLSallaBreadcrumbElement;
+        "salla-cart-items": HTMLSallaCartItemsElement;
         "salla-checkout": HTMLSallaCheckoutElement;
         "salla-checkout-header": HTMLSallaCheckoutHeaderElement;
+        "salla-shipping-companies": HTMLSallaShippingCompaniesElement;
     }
 }
 declare namespace LocalJSX {
     interface SallaBreadcrumb {
     }
+    interface SallaCartItems {
+    }
     interface SallaCheckout {
     }
     interface SallaCheckoutHeader {
     }
+    interface SallaShippingCompanies {
+    }
     interface IntrinsicElements {
         "salla-breadcrumb": SallaBreadcrumb;
+        "salla-cart-items": SallaCartItems;
         "salla-checkout": SallaCheckout;
         "salla-checkout-header": SallaCheckoutHeader;
+        "salla-shipping-companies": SallaShippingCompanies;
     }
 }
 export { LocalJSX as JSX };
@@ -56,8 +80,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "salla-breadcrumb": LocalJSX.SallaBreadcrumb & JSXBase.HTMLAttributes<HTMLSallaBreadcrumbElement>;
+            "salla-cart-items": LocalJSX.SallaCartItems & JSXBase.HTMLAttributes<HTMLSallaCartItemsElement>;
             "salla-checkout": LocalJSX.SallaCheckout & JSXBase.HTMLAttributes<HTMLSallaCheckoutElement>;
             "salla-checkout-header": LocalJSX.SallaCheckoutHeader & JSXBase.HTMLAttributes<HTMLSallaCheckoutHeaderElement>;
+            "salla-shipping-companies": LocalJSX.SallaShippingCompanies & JSXBase.HTMLAttributes<HTMLSallaShippingCompaniesElement>;
         }
     }
 }
