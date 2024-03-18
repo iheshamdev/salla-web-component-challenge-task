@@ -24,7 +24,7 @@ export class SallaPrimaryBtn {
     if (this.value) {
       // TODO: enhance naming convention
       // if there's a value. check if validCoupon
-      const validCoupon = state.coupons.find(c => c.name === this.value);
+      const validCoupon = state.coupons.find(c => c.name === this.value.toLowerCase().trim());
       if (validCoupon) {
         this.showInvalidMsg = false;
         state.appliedCoupon = validCoupon;
@@ -45,7 +45,7 @@ export class SallaPrimaryBtn {
       <div class="coupon-container">
         <div class="applied-coupon">
           <img src="/assets/discount-coupon.svg" alt="" class="w-4" />
-          <span class="uppercase">{this.value}</span>
+          <span class="uppercase">{state.appliedCoupon.label}</span>
           <img
             src="/assets/remove.svg"
             alt=""
@@ -53,7 +53,9 @@ export class SallaPrimaryBtn {
             onClick={this.removeCoupon}
           />
         </div>
-        <b class="text-red-500">SAR -{state.appliedCoupon.discountAmount}</b>
+        <b class="text-red-500">
+          {state.currency} -{state.appliedDiscount}
+        </b>
       </div>
     ) : (
       <div class="coupon-container">

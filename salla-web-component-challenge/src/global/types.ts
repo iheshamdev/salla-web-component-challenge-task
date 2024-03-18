@@ -1,3 +1,16 @@
+type CheckoutState = {
+  checkoutSteps: string[];
+  currentStepIndex: number;
+  currency: 'SAR';
+  cartItems: CartItem[];
+  cartTotal: number;
+  shippingCompanies: ShippingCompany[];
+  selectedShippingCompany: ShippingCompany | null;
+  shippingFees: number;
+  coupons: Coupon[];
+  appliedCoupon: Coupon | null;
+  appliedDiscount: number;
+};
 type CartItem = {
   id: string;
   label: string;
@@ -28,5 +41,4 @@ type Coupon = {
     type: 'percentage';
     amount: string;
   };
-  discountAmount?: number;
 };
