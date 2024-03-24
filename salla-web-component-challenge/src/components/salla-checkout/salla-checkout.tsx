@@ -6,7 +6,7 @@ import state from '../../global/store';
   styleUrl: './salla-checkout.css',
   shadow: true,
 })
-export class MyComponent {
+export class SallaCheckout {
   @State() checkoutSubmitted: boolean = false;
   getCurrentStep = () =>
     state.currentStepIndex === 0 ? <salla-cart-items /> : <salla-shipping-companies />;
@@ -22,16 +22,8 @@ export class MyComponent {
   render() {
     if (this.checkoutSubmitted) {
       return (
-        <div class="checkout-container items-center justify-center gap-y-4">
-          <div class="flex flex-col gap-y-2 items-center">
-            <img src="/assets/logo.svg" alt="" class="w-8" />
-            <h1 class="text-primary font-bold text-lg">StoreName</h1>
-          </div>
-          <h2 class="font-black text-black[333] text-[38px] leading-8">Payment Confirmed</h2>
-          <p class="text-black[999] text-lg">Thank you for shopping</p>
-          <a href="#" class="underline text-[#22BA99] text-sm">
-            return to store
-          </a>
+        <div class="checkout-container items-center justify-center text-center">
+          <salla-payment-confirmed />
         </div>
       );
     }
