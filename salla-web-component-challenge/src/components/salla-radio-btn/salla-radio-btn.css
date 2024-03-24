@@ -1,5 +1,5 @@
 .radio-btn-container {
-  @apply flex items-center gap-x-3 px-1 py-2;
+  @apply flex items-center gap-x-3 px-1 py-3;
 }
 
 .radio-btn-container input {

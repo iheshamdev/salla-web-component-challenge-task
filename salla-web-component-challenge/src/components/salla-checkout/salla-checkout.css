@@ -2,8 +2,14 @@
   display: block;
 }
 .checkout-container {
-  @apply bg-white rounded-[12px] w-[550px] p-5 mx-auto flex flex-col gap-y-4 h-[550px] max-h-dvh;
+  @apply bg-white rounded-[12px] h-auto w-[550px] min-h-[550px] p-5 mx-auto flex flex-col gap-y-4;
 }
 .current-step {
-  @apply flex-1;
+  @apply flex flex-col flex-1;
+}
+
+@media screen and (max-width: 551px) {
+  .checkout-container {
+    @apply w-dvw min-h-dvh rounded-none py-8 px-4;
+  }
 }

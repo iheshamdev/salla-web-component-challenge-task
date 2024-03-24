@@ -53,3 +53,10 @@ body {
 body {
   @apply flex flex-col items-center justify-center bg-gray;
 }
+
+@media screen and (max-width: 551px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}

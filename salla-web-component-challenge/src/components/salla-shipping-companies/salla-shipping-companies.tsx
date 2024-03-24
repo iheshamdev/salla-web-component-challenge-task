@@ -19,7 +19,7 @@ export class SallaShippingCompanies {
 
   render() {
     return (
-      <div class="border-b border-gray h-full">
+      <div class="flex flex-col flex-1 border-b border-gray">
         {state.shippingCompanies.map(company => (
           <salla-radio-btn
             key={company.id}

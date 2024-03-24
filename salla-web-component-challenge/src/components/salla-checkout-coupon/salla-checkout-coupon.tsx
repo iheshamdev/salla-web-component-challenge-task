@@ -63,20 +63,14 @@ export class SallaPrimaryBtn {
           <b>Have a coupon?</b>
           {this.showInvalidMsg && <small class="text-red-500">Please enter a valid coupon.</small>}
         </div>
-        <div class="flex items-stretch gap-x-1 bg-[#eee] bg-opacity-25 rounded-md shadow-inner-[0_35px_60px_-15px_rgba(0,0,0,0.3)] p-1">
+        <div class="coupon-field">
           <input
             type="text"
             placeholder="Insert code"
             value={this.value}
             onInput={event => this.handleChange(event)}
-            class="bg-transparent px-2 py-1 outline-none w-[140px] text-sm"
           />
-          <button
-            class="bg-primary text-white text-xs rounded px-3 py-1"
-            onClick={this.applyCoupon}
-          >
-            Apply
-          </button>
+          <button onClick={this.applyCoupon}>Apply</button>
         </div>
       </div>
     );
