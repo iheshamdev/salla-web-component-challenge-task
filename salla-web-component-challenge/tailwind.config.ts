@@ -1,11 +1,11 @@
 import type { Config } from 'tailwindcss';
 import * as defaultColors from 'tailwindcss/colors';
 
-const colors = {
+export const colors = {
   ...defaultColors,
   primary: '#004D5A',
   secondary: '#BAF3E6',
-  gray: '#eee',
+  lightGray: '#eee',
   black: {
     pure: '#000',
     111: '#111',
@@ -19,7 +19,6 @@ const colors = {
     999: '#999',
   },
 };
-export { colors };
 
 const config: Config = {
   content: ['./src/**/*.{html,js,ts,jsx,tsx}'],

@@ -1,6 +1,7 @@
 import { Component, State, h } from '@stencil/core';
 import { fetchCoupons } from '../../global/services';
 import state from '../../global/store';
+import { DiscountCouponIcon, RemoveIcon } from '../icons';
 
 @Component({
   tag: 'salla-checkout-coupon',
@@ -12,7 +13,7 @@ export class SallaPrimaryBtn {
   @State() showInvalidMsg: boolean = false;
 
   componentWillLoad() {
-    fetchCoupons();
+    if (state.coupons.length === 0) fetchCoupons();
   }
 
   handleChange(event: Event) {
@@ -22,7 +23,6 @@ export class SallaPrimaryBtn {
 
   applyCoupon = () => {
     if (this.value) {
-      // TODO: enhance naming convention
       // if there's a value. check if validCoupon
       const validCoupon = state.coupons.find(c => c.name === this.value.toLowerCase().trim());
       if (validCoupon) {
@@ -44,14 +44,9 @@ export class SallaPrimaryBtn {
     return state.appliedCoupon ? (
       <div class="coupon-container">
         <div class="applied-coupon">
-          <img src="/assets/discount-coupon.svg" alt="" class="w-4" />
+          <DiscountCouponIcon />
           <span class="uppercase">{state.appliedCoupon.label}</span>
-          <img
-            src="/assets/remove.svg"
-            alt=""
-            class="w-4 cursor-pointer"
-            onClick={this.removeCoupon}
-          />
+          <RemoveIcon />
         </div>
         <b class="text-red-500">
           {state.currency} -{state.appliedDiscount}

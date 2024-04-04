@@ -35,13 +35,19 @@ const STATIC_CART_ITEMS: CartItem[] = [
 ];
 
 export async function fetchCartItems() {
+  console.log('fetching cart items...');
   try {
+    state.loading = true;
     const res = (await GET({ endpoint: 'items' })) as any;
     state.cartItems = res.data || [];
+    console.log('fetched cart items. YES!', res);
     return res.data;
   } catch (error) {
     state.cartItems = STATIC_CART_ITEMS;
+    console.log('Rejected cart items. :(');
     return STATIC_CART_ITEMS;
+  } finally {
+    state.loading = false;
   }
 }
 
@@ -105,7 +111,7 @@ const STATIC_COUPONS: Coupon[] = [
 export async function fetchCoupons() {
   try {
     //   const cartItems = await fetchCartItems();
-    const res = (await GET({ endpoint: 'coupon' })) as any;
+    const res = (await GET({ endpoint: 'coupons' })) as any;
     state.coupons = res.data || [];
     return res.data;
   } catch (error) {

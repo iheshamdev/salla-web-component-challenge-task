@@ -24,7 +24,7 @@ export class SallaBreadcrumb {
                 ) : (
                   <span>{item.text}</span>
                 )}
-                {!isLastItem && <span class="text-gray-400">/</span>}
+                {!isLastItem && <span class="text-gray[400]">/</span>}
               </li>
             );
           })}

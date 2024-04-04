@@ -8,6 +8,7 @@ import state from '../../global/store';
 })
 export class SallaCheckout {
   @State() checkoutSubmitted: boolean = false;
+  @State() loading: boolean = false;
   getCurrentStep = () =>
     state.currentStepIndex === 0 ? <salla-cart-items /> : <salla-shipping-companies />;
 
@@ -30,13 +31,22 @@ export class SallaCheckout {
     return (
       <div class="checkout-container">
         <salla-checkout-header />
-        {/* cart items || shipping companies */}
-        <div class="current-step">{this.getCurrentStep()}</div>
-        {state.currentStepIndex === 0 && <salla-checkout-coupon />}
-        <salla-checkout-totals />
-        <button class="bg-primary text-white text-md rounded-md px-4 py-3" onClick={this.onSubmit}>
-          Proceed to shipping
-        </button>
+        {state.loading ? (
+          <salla-checkout-skeleton />
+        ) : (
+          [
+            // state.currentStepIndex === 0 ? <salla-cart-items /> : <salla-shipping-companies />,
+            <div class="current-step">{this.getCurrentStep()}</div>,
+            state.currentStepIndex === 0 && <salla-checkout-coupon />,
+            <salla-checkout-totals />,
+            <button
+              class="bg-primary text-white text-md rounded-md px-4 py-3"
+              onClick={this.onSubmit}
+            >
+              {state.currentStepIndex === 0 ? 'Proceed to shipping' : 'Submit'}
+            </button>,
+          ]
+        )}
       </div>
     );
   }

@@ -9,7 +9,7 @@ import { fetchCartItems } from '../../global/services';
 })
 export class SallaCartItems {
   componentWillLoad() {
-    fetchCartItems();
+    if (state.cartItems.length === 0) fetchCartItems();
   }
   render() {
     return (

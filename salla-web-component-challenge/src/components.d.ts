@@ -16,6 +16,8 @@ export namespace Components {
     }
     interface SallaCheckoutHeader {
     }
+    interface SallaCheckoutSkeleton {
+    }
     interface SallaCheckoutTotals {
     }
     interface SallaPaymentConfirmed {
@@ -65,6 +67,12 @@ declare global {
         prototype: HTMLSallaCheckoutHeaderElement;
         new (): HTMLSallaCheckoutHeaderElement;
     };
+    interface HTMLSallaCheckoutSkeletonElement extends Components.SallaCheckoutSkeleton, HTMLStencilElement {
+    }
+    var HTMLSallaCheckoutSkeletonElement: {
+        prototype: HTMLSallaCheckoutSkeletonElement;
+        new (): HTMLSallaCheckoutSkeletonElement;
+    };
     interface HTMLSallaCheckoutTotalsElement extends Components.SallaCheckoutTotals, HTMLStencilElement {
     }
     var HTMLSallaCheckoutTotalsElement: {
@@ -106,6 +114,7 @@ declare global {
         "salla-checkout": HTMLSallaCheckoutElement;
         "salla-checkout-coupon": HTMLSallaCheckoutCouponElement;
         "salla-checkout-header": HTMLSallaCheckoutHeaderElement;
+        "salla-checkout-skeleton": HTMLSallaCheckoutSkeletonElement;
         "salla-checkout-totals": HTMLSallaCheckoutTotalsElement;
         "salla-payment-confirmed": HTMLSallaPaymentConfirmedElement;
         "salla-radio-btn": HTMLSallaRadioBtnElement;
@@ -122,6 +131,8 @@ declare namespace LocalJSX {
     interface SallaCheckoutCoupon {
     }
     interface SallaCheckoutHeader {
+    }
+    interface SallaCheckoutSkeleton {
     }
     interface SallaCheckoutTotals {
     }
@@ -143,6 +154,7 @@ declare namespace LocalJSX {
         "salla-checkout": SallaCheckout;
         "salla-checkout-coupon": SallaCheckoutCoupon;
         "salla-checkout-header": SallaCheckoutHeader;
+        "salla-checkout-skeleton": SallaCheckoutSkeleton;
         "salla-checkout-totals": SallaCheckoutTotals;
         "salla-payment-confirmed": SallaPaymentConfirmed;
         "salla-radio-btn": SallaRadioBtn;
@@ -158,6 +170,7 @@ declare module "@stencil/core" {
             "salla-checkout": LocalJSX.SallaCheckout & JSXBase.HTMLAttributes<HTMLSallaCheckoutElement>;
             "salla-checkout-coupon": LocalJSX.SallaCheckoutCoupon & JSXBase.HTMLAttributes<HTMLSallaCheckoutCouponElement>;
             "salla-checkout-header": LocalJSX.SallaCheckoutHeader & JSXBase.HTMLAttributes<HTMLSallaCheckoutHeaderElement>;
+            "salla-checkout-skeleton": LocalJSX.SallaCheckoutSkeleton & JSXBase.HTMLAttributes<HTMLSallaCheckoutSkeletonElement>;
             "salla-checkout-totals": LocalJSX.SallaCheckoutTotals & JSXBase.HTMLAttributes<HTMLSallaCheckoutTotalsElement>;
             "salla-payment-confirmed": LocalJSX.SallaPaymentConfirmed & JSXBase.HTMLAttributes<HTMLSallaPaymentConfirmedElement>;
             "salla-radio-btn": LocalJSX.SallaRadioBtn & JSXBase.HTMLAttributes<HTMLSallaRadioBtnElement>;

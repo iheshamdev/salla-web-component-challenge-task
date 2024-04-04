@@ -5,6 +5,7 @@ const { state, onChange } = createStore<CheckoutState>({
   currentStepIndex: 0,
   currency: 'SAR',
   cartItems: [],
+  loading: false,
   cartTotal: 0,
   shippingCompanies: [],
   selectedShippingCompany: null,
@@ -13,7 +14,9 @@ const { state, onChange } = createStore<CheckoutState>({
   appliedCoupon: null,
   appliedDiscount: 0,
 });
-
+// cartItems = {data, loading, error, total}
+// shippingCompanies = {data, loading, error, selected, fees}
+// coupons = {data, loading, error, applied, discount}
 onChange('cartItems', () => {
   state.cartTotal = calculateCartTotal();
 });
@@ -27,7 +30,8 @@ onChange('appliedCoupon', () => {
   }
 });
 onChange('shippingCompanies', () => {
-  state.selectedShippingCompany = state.shippingCompanies[0] || null;
+  if (!state.selectedShippingCompany)
+    state.selectedShippingCompany = state.shippingCompanies[0] || null;
 });
 
 function calculateCartTotal(discount = 0) {

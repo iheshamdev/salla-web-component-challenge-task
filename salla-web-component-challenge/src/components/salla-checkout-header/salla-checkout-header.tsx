@@ -1,5 +1,7 @@
 import { Component, h } from '@stencil/core';
 import state from '../../global/store';
+import StoreLogo from '../icons/store-logo';
+import { BackArrowIcon } from '../icons';
 
 @Component({
   tag: 'salla-checkout-header',
@@ -13,7 +15,7 @@ export class CheckoutHeader {
     return (
       <div class="salla-checkout-header">
         <div class="flex gap-x-4">
-          <img src="/assets/logo.svg" alt="" />
+          <StoreLogo />
           <div class="flex-col">
             <h1>StoreName</h1>
             <salla-breadcrumb />
@@ -21,7 +23,9 @@ export class CheckoutHeader {
         </div>
         <div class="flex gap-x-4 items-center">
           {state.currentStepIndex > 0 && (
-            <img src="/assets/arrow.svg" alt="" class="cursor-pointer" onClick={this.goBack} />
+            <span class="cursor-pointer" onClick={this.goBack}>
+              <BackArrowIcon />
+            </span>
           )}
           <h2>{state.checkoutSteps[state.currentStepIndex]}</h2>
           <div class="divider"></div>

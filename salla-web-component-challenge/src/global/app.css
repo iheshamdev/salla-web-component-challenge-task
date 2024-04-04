@@ -51,7 +51,7 @@ body {
 }
 
 body {
-  @apply flex flex-col items-center justify-center bg-gray;
+  @apply flex flex-col items-center justify-center bg-lightGray;
 }
 
 @media screen and (max-width: 551px) {
