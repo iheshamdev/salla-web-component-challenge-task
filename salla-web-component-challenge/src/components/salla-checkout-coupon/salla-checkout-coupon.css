@@ -2,7 +2,7 @@
   @apply flex gap-x-4 items-center justify-between;
 }
 .applied-coupon {
-  @apply flex gap-x-2 py-2 px-3 rounded-md border font-bold;
+  @apply flex items-center gap-x-2 py-2 px-3 rounded-md border font-bold;
   border-color: rgba(0, 77, 90, 0.25);
 }
 

@@ -44,9 +44,13 @@ export class SallaPrimaryBtn {
     return state.appliedCoupon ? (
       <div class="coupon-container">
         <div class="applied-coupon">
-          <DiscountCouponIcon />
-          <span class="uppercase">{state.appliedCoupon.label}</span>
-          <RemoveIcon />
+          <span class="flex">
+            <DiscountCouponIcon />
+          </span>
+          <span class="uppercase leading-5">{state.appliedCoupon.label}</span>
+          <span class="flex cursor-pointer" onClick={this.removeCoupon}>
+            <RemoveIcon />
+          </span>
         </div>
         <b class="text-red-500">
           {state.currency} -{state.appliedDiscount}

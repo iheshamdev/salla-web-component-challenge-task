@@ -3,6 +3,7 @@ import tailwind, { tailwindHMR, setPluginConfigurationDefaults } from 'stencil-t
 import tailwindcss from 'tailwindcss';
 import tailwindConf from './tailwind.config';
 import autoprefixer from 'autoprefixer';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 setPluginConfigurationDefaults({
   tailwindConf,
@@ -28,6 +29,10 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
     },
+    reactOutputTarget({
+      componentCorePackage: 'salla-web-component-challenge',
+      proxiesFile: '../examples/react-app/src/lib/components/stencil-generated/index.ts',
+    }),
   ],
   testing: {
     browserHeadless: 'new',

@@ -23,7 +23,10 @@ export class CheckoutHeader {
         </div>
         <div class="flex gap-x-4 items-center">
           {state.currentStepIndex > 0 && (
-            <span class="cursor-pointer" onClick={this.goBack}>
+            <span
+              class="cursor-pointer self-stretch px-2 flex items-center rounded-full hover:bg-gray-300"
+              onClick={this.goBack}
+            >
               <BackArrowIcon />
             </span>
           )}
