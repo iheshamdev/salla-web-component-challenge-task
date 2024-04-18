@@ -1,0 +1,16 @@
+{
+  "name": "workspaces",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "examples/*",
+    "packages/*"
+  ],
+  "packageManager": "yarn@1.22.21",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "lerna": "^8.1.2",
+    "typescript": "^5.4.5"
+  }
+}

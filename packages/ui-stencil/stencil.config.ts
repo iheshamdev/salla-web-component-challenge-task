@@ -5,6 +5,9 @@ import tailwindConf from './tailwind.config';
 import autoprefixer from 'autoprefixer';
 import { reactOutputTarget } from '@stencil/react-output-target';
 
+const namespace = 'salla-ui-stencil';
+const componentCorePackage = namespace;
+
 setPluginConfigurationDefaults({
   tailwindConf,
   postcss: {
@@ -13,7 +16,10 @@ setPluginConfigurationDefaults({
 });
 
 export const config: Config = {
-  namespace: 'salla-web-component-challenge',
+  namespace,
+  extras: {
+    enableImportInjection: true,
+  },
   outputTargets: [
     {
       type: 'dist',
@@ -30,8 +36,8 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
     reactOutputTarget({
-      componentCorePackage: 'salla-web-component-challenge',
-      proxiesFile: '../examples/react-app/src/lib/components/stencil-generated/index.ts',
+      componentCorePackage: componentCorePackage,
+      proxiesFile: '../ui-stencil-react/lib/components/stencil-generated/index.ts',
     }),
   ],
   testing: {

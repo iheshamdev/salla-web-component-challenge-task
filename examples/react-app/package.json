@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "salla-web-component-challenge": "file:../../salla-web-component-challenge"
+    "@salla/stencil-react": "*"
   },
   "devDependencies": {
     "@types/node": "^20.12.5",

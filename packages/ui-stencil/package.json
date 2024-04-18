@@ -1,5 +1,5 @@
 {
-  "name": "salla-web-component-challenge",
+  "name": "salla-ui-stencil",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/salla-web-component-challenge/salla-web-component-challenge.esm.js",
+  "unpkg": "dist/salla-ui-stencil/salla-ui-stencil.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/SallaChallenges/WebComponent-Challenge-iheshamdev-7479"

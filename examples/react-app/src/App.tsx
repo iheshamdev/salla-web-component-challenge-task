@@ -1,9 +1,9 @@
-import { SallaCheckout } from "./lib/components/stencil-generated";
-import { defineCustomElements } from "salla-web-component-challenge/loader";
-defineCustomElements();
+import { SallaCheckout, defineCustomElements } from '@salla/stencil-react'
+
+void defineCustomElements();
 
 function App() {
-  return <SallaCheckout />;
+  return <SallaCheckout ></SallaCheckout>;
 }
 
 export default App;

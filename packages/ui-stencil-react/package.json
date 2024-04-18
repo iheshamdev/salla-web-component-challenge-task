@@ -1,0 +1,32 @@
+{
+  "name": "@salla/stencil-react",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "npm run tsc",
+    "clean": "rm -rf node_modules",
+    "test": "node ./__tests__/react-library.test.js",
+    "tsc": "tsc -p . --outDir ./dist"
+  },
+  "dependencies": {
+    "salla-ui-stencil": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "@types/react": "^18.2.33",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -3,7 +3,7 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import type { JSX } from 'salla-web-component-challenge';
+import type { JSX } from 'salla-ui-stencil';
 
 
 
