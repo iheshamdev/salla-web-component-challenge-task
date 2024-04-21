@@ -27,10 +27,6 @@ To set up the project locally, follow these steps:
 
 Now you're ready to start development 🎆
 
-## Start working on the stencil web components
-
-## Start working on the consumer react app
-
 ## Scripts
 
 - Start the development server of `salla-ui-stencil` package
