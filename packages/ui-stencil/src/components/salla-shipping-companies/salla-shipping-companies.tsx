@@ -14,7 +14,7 @@ export class SallaShippingCompanies {
   }
 
   componentWillLoad() {
-    fetchShippingCompanies();
+    if (state.shippingCompanies.length === 0) fetchShippingCompanies();
   }
 
   render() {

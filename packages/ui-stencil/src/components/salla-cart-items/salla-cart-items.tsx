@@ -17,10 +17,6 @@ export class SallaCartItems {
         <ul>
           {state.cartItems.map(item => (
             <li key={item.id}>
-              {/* <div
-                class="w-10 h-10 rounded-full border border-[#eee] bg-center bg-no-repeat"
-                style={{ backgroundImage: `url(${item.thumbnail})`, backgroundSize: '160%' }}
-              ></div> */}
               <img src={item.thumbnail} alt="" />
               <div class="content">
                 <div class="product-name">

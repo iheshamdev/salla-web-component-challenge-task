@@ -32,7 +32,6 @@ async function HTTP_REQUEST<T>({ method, endpoint, config, showToastError }: HTT
     }
   } else {
     content = await response.json();
-    console.log('Succeed', content);
   }
 
   return new Promise<T>((resolve, reject) => {

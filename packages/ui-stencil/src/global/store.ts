@@ -1,11 +1,11 @@
 import { createStore } from '@stencil/store';
 
-const { state, onChange } = createStore<CheckoutState>({
+const { state, onChange, reset } = createStore<CheckoutState>({
   checkoutSteps: ['cart', 'shipping'],
   currentStepIndex: 0,
   currency: 'SAR',
   cartItems: [],
-  loading: false,
+  cartItems_loading: false,
   cartTotal: 0,
   shippingCompanies: [],
   selectedShippingCompany: null,
@@ -14,9 +14,7 @@ const { state, onChange } = createStore<CheckoutState>({
   appliedCoupon: null,
   appliedDiscount: 0,
 });
-// cartItems = {data, loading, error, total}
-// shippingCompanies = {data, loading, error, selected, fees}
-// coupons = {data, loading, error, applied, discount}
+
 onChange('cartItems', () => {
   state.cartTotal = calculateCartTotal();
 });

@@ -8,8 +8,8 @@ import state from '../../global/store';
 })
 export class SallaCheckout {
   @State() checkoutSubmitted: boolean = false;
-  @State() loading: boolean = false;
-  getCurrentStep = () =>
+
+  renderCurrentStep = () =>
     state.currentStepIndex === 0 ? <salla-cart-items /> : <salla-shipping-companies />;
 
   onSubmit = () => {
@@ -31,12 +31,11 @@ export class SallaCheckout {
     return (
       <div class="checkout-container">
         <salla-checkout-header />
-        {state.loading ? (
+        {state.cartItems_loading ? (
           <salla-checkout-skeleton />
         ) : (
           [
-            // state.currentStepIndex === 0 ? <salla-cart-items /> : <salla-shipping-companies />,
-            <div class="current-step">{this.getCurrentStep()}</div>,
+            <div class="current-step">{this.renderCurrentStep()}</div>,
             state.currentStepIndex === 0 && <salla-checkout-coupon />,
             <salla-checkout-totals />,
             <button

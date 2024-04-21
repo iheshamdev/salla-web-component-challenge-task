@@ -3,7 +3,7 @@ type CheckoutState = {
   currentStepIndex: number;
   currency: 'SAR';
   cartItems: CartItem[];
-  loading: boolean;
+  cartItems_loading: boolean;
   cartTotal: number;
   shippingCompanies: ShippingCompany[];
   selectedShippingCompany: ShippingCompany | null;
