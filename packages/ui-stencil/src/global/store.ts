@@ -1,6 +1,6 @@
 import { createStore } from '@stencil/store';
 
-const { state, onChange, reset } = createStore<CheckoutState>({
+const { state, onChange } = createStore<CheckoutState>({
   checkoutSteps: ['cart', 'shipping'],
   currentStepIndex: 0,
   currency: 'SAR',
