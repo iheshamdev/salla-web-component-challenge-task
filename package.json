@@ -7,6 +7,12 @@
     "packages/*"
   ],
   "packageManager": "yarn@1.22.21",
+  "scripts": {
+    "build": "lerna run --parallel build",
+    "start:salla-ui-stencil": "lerna run start --scope=salla-ui-stencil",
+    "start:react-app": "lerna run dev --scope=react-app",
+    "preview:react-app": "lerna run preview --scope=react-app"
+  },
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^20.12.7",
