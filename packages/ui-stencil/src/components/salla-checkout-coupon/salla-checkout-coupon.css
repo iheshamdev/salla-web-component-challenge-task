@@ -1,0 +1,19 @@
+.coupon-container {
+  @apply flex gap-x-4 items-center justify-between;
+}
+.applied-coupon {
+  @apply flex items-center gap-x-2 py-2 px-3 rounded-md border font-bold;
+  border-color: rgba(0, 77, 90, 0.25);
+}
+
+.coupon-field {
+  @apply flex items-stretch gap-x-1 bg-white rounded-md p-1;
+  box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(238, 238, 238, 0.25);
+}
+input {
+  @apply bg-transparent p-1 outline-none w-24 text-sm;
+}
+button {
+  @apply bg-primary text-white text-xs rounded px-3 py-1;
+}

@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* font-weight: 400 */
+@font-face {
+  font-family: 'Ping LCG';
+  src: local('Ping LCG Regular'),
+    local('PingLCG-Regular') url('/assets/font/PingLCG-Regular.woff2') format('woff2'),
+    url('/assets/font/PingLCG-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* font-weight: 500 */
+@font-face {
+  font-family: 'Ping LCG';
+  src: local('Ping LCG Medium'), local('PingLCG-Medium'),
+    url('PingLCG-Medium.woff2') format('woff2'), url('PingLCG-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+/* font-weight: 700 */
+@font-face {
+  font-family: 'Ping LCG';
+  src: local('Ping LCG Bold'), local('PingLCG-Bold'),
+    url('/assets/font/PingLCG-Bold.woff2') format('woff2'),
+    url('/assets/font/PingLCG-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+/* font-weight: 900 */
+@font-face {
+  font-family: 'Ping LCG';
+  src: url('PingLCG-Black.eot');
+  src: local('Ping LCG Black'), local('PingLCG-Black'), url('PingLCG-Black.woff2') format('woff2'),
+    url('PingLCG-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Ping LCG', sans-serif;
+}
+
+html,
+body {
+  @apply h-full;
+}
+
+body {
+  @apply flex flex-col items-center justify-center bg-lightGray;
+}
+
+@media screen and (max-width: 551px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}

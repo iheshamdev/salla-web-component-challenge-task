@@ -1,0 +1,12 @@
+.salla-checkout-header {
+  @apply flex flex-col gap-y-4;
+}
+h1 {
+  @apply text-primary text-lg leading-5 font-bold;
+}
+h2 {
+  @apply text-primary capitalize font-bold;
+}
+.divider {
+  @apply flex-1 bg-primary h-[2px];
+}

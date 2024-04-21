@@ -1,0 +1,9 @@
+ol {
+  @apply list-none p-0 flex text-sm gap-x-1;
+}
+li {
+  @apply flex items-center gap-x-1 text-black-999;
+}
+li:last-of-type {
+  @apply text-black-333;
+}

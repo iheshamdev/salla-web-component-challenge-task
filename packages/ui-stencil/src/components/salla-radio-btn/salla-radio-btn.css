@@ -1,0 +1,15 @@
+.radio-btn-container {
+  @apply flex items-center gap-x-3 px-1 py-3;
+}
+
+.radio-btn-container input {
+  @apply hidden;
+}
+
+.radio-btn-circle {
+  box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.06);
+  @apply w-4 h-4 rounded-full border-2 border-lightGray cursor-pointer;
+}
+.radio-btn-circle.checked {
+  @apply bg-primary border-secondary;
+}
