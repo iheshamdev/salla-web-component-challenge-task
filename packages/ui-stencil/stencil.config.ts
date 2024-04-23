@@ -4,6 +4,7 @@ import tailwindcss from 'tailwindcss';
 import tailwindConf from './tailwind.config';
 import autoprefixer from 'autoprefixer';
 import { reactOutputTarget } from '@stencil/react-output-target';
+import { vueOutputTarget } from '@stencil/vue-output-target';
 
 const namespace = 'salla-ui-stencil';
 const componentCorePackage = namespace;
@@ -38,6 +39,10 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: componentCorePackage,
       proxiesFile: '../ui-stencil-react/lib/components/stencil-generated/index.ts',
+    }),
+    vueOutputTarget({
+      componentCorePackage: componentCorePackage,
+      proxiesFile: '../ui-stencil-vue/lib/components/stencil-generated/index.ts',
     }),
   ],
   testing: {

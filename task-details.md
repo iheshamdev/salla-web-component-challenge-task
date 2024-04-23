@@ -9,6 +9,7 @@ You will create a mini checkout ([Check the UI here](https://www.figma.com/file/
 
 1. Cart Items web Component.
 2. Shipping Companies web component.
+3. test
 
 The checkout will be in 2 versions React and Vue to ensure web component re-usability in any different framework.
 use the following API for the project:
